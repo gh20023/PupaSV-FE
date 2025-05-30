@@ -1,9 +1,8 @@
 export class TipoProducto{
-    constructor(idTipoProducto, nombre, activo, observaciones, productoDetalleList){
-        this.idTipoProducto;
+    constructor(idTipoProducto, nombre, activo, observaciones){
+        this.idTipoProducto = idTipoProducto;
         this.nombre = nombre;
         this.activo = activo;
         this.observaciones = observaciones;
-        this. productoDetalleList = productoDetalleList;
     }
 }
