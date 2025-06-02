@@ -7,7 +7,7 @@ export class ComboDetalleMapper{
             json.ComboDetallePK,
             json.cantidad,
             json.activo,
-            json.producto ? ProductoMapper.fromJSON(json.producto) : null
+            json.producto ? ProductoMapper.fromJSON(json.producto) : null //Trae un objeto en base a otro mapper
         );
     }
 }

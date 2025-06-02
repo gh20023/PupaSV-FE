@@ -8,7 +8,7 @@ export class ComboMapper {
             json.nombre,
             json.activo,
             json.descripcionPublica,
-            (json.comboDetalleList || []).map(cd => ComboDetalleMapper.fromJSON(cd))
+            (json.comboDetalleList || []).map(cd => ComboDetalleMapper.fromJSON(cd)) //Trae una lista en base a otro mapper
         );
     }
 }

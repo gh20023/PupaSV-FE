@@ -1,0 +1,26 @@
+{
+  "name": "pupas-fe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "browser-sync start --server 'src' --files 'src/**/*.html', 'src/**/*.css', 'src/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gh20023/PupaSV-FE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gh20023/PupaSV-FE/issues"
+  },
+  "homepage": "https://github.com/gh20023/PupaSV-FE#readme",
+  "description": "",
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
+  }
+}

@@ -1,4 +1,4 @@
-import { TipoProducto } from "../../entity/TipoProducto";
+import { TipoProducto } from "../../entity/TipoProducto.js";
 
 export class TipoProductoMapper {
     static fromJSON(json) {

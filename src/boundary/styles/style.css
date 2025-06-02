@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  background-color: #fafafa;
+}
+
+header {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+
+.container {
+  max-width: 1200px;
+  background-color: transparent;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;
+  color: #D9BCA3;
+  display: flex;
+  align-items: center;
+
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #2b7a78;
+}
+
+.btn {
+  background-color: #2b7a78;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #205c5b;
+}
+
+.hero {
+  position: relative;
+  background: url('../../resources/images/pupusas-gourmet.jpg') no-repeat center center / cover;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  padding-top: 8rem;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* cambia el 0.4 según qué tan oscuro querés */
+  z-index: 0;
+}
+
+.hero * {
+  position: relative;
+  z-index: 1;
+}
+
+
+.hero h1 {
+  font-size: 4rem;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.hero .sub {
+  color: #fffdc1;
+  font-weight: 300;
+}
