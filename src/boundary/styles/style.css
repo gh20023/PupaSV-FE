@@ -22,7 +22,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  padding-left: 0;
+  padding-right: 1rem;
 }
 
 
@@ -36,6 +37,12 @@ header {
   height: 60%;
   width: auto;
   max-height: 100px;
+}
+
+.logo img {
+  height: 250px;
+  width: auto;
+  margin-right: 10px;
 }
 
 nav ul {
@@ -118,6 +125,7 @@ nav a:hover {
   font-weight: 300;
 }
 
+<<<<<<< HEAD
 .main-container {
   max-width: 900px;
   margin: 0 auto;
@@ -179,3 +187,43 @@ section.productos {
   font-size: 1.5rem;
   cursor: pointer;
 }
+=======
+.sucursales {
+  padding: 8rem 1rem 4rem 1rem; /* más padding-top */
+  text-align: center;
+  background-color: #f4c542; /* Mostaza */
+}
+
+.sucursales h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2b7a78;
+}
+
+.sucursal-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.sucursal {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2rem;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.sucursal:hover {
+  transform: translateY(-5px);
+}
+
+.sucursal h3 {
+  color: #444;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+>>>>>>> 999b586 (Cambios agregados al FrontEnd)
