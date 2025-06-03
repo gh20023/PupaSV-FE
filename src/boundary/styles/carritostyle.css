@@ -1,56 +1,264 @@
-.carrito-section {
-  padding-top: 8rem; /* Espacio para el header fijo */
-  padding-bottom: 3rem;
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #fffaf3;
+/* styles/carritostyle.css */
+
+/* Contenedor principal - Fusión de ambos estilos */
+#carrito-section {
+  max-width: 1200px;
+  margin: 6rem auto 3rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  min-height: 60vh;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.carrito-section h1 {
-  text-align: center;
-  margin-bottom: 2rem;
+#carrito-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Título mejorado */
+#carrito-section h1 {
   font-family: 'Pacifico', cursive;
   color: #2b7a78;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  position: relative;
 }
 
+#carrito-section h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #f4c542;
+}
+
+/* Tabla de items - Versión mejorada */
 #carrito-items {
   width: 100%;
-  max-width: 700px;
-  margin: 0 auto 2rem auto;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 2rem;
   overflow-x: auto;
+  margin-bottom: 2rem;
 }
 
 #carrito-items table {
   width: 100%;
   border-collapse: collapse;
-  text-align: center;
-}
-
-#carrito-items th, #carrito-items td {
-  padding: 0.75em 0.5em;
-  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 1rem;
 }
 
 #carrito-items th {
-  background: #f4c542;
-  color: #2b7a78;
-  font-weight: bold;
+  background-color: #2b7a78;
+  color: white;
+  padding: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+#carrito-items td {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
 }
 
 #carrito-items tr:last-child td {
   border-bottom: none;
 }
 
+#carrito-items tr:hover {
+  background-color: #fff9e6;
+}
+
+/* Estilos específicos para columnas */
+#carrito-items td:nth-child(3),
+#carrito-items td:nth-child(4) {
+  color: #d94f04;
+  font-weight: bold;
+}
+
+/* Total del carrito - Versión mejorada */
 #carrito-total {
   text-align: right;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #d94f04;
-  margin: 1.5rem 0 0 0;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px dashed #f4c542;
+}
+
+/* Mensajes de estado */
+.carrito-mensaje {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.carrito-error {
+  color: #d94f04;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+/* Botones de acción - Versión mejorada */
+.acciones-carrito {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.btn-accion {
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-continuar {
+  background-color: #2b7a78;
+  color: white;
+}
+
+.btn-continuar:hover {
+  background-color: #205c5b;
+  transform: translateY(-2px);
+}
+
+.btn-vaciar {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.btn-vaciar:hover {
+  background-color: #e05555;
+  transform: translateY(-2px);
+}
+
+/* Responsive - Mejorado */
+@media (max-width: 768px) {
+  #carrito-section {
+    margin: 5rem auto 2rem;
+    padding: 1rem;
+  }
+  
+  #carrito-items table {
+    font-size: 0.9rem;
+    display: block;
+    overflow-x: auto;
+  }
+  
+  #carrito-items th,
+  #carrito-items td {
+    padding: 0.8rem 0.5rem;
+    min-width: 100px;
+  }
+  
+  .acciones-carrito {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .btn-accion {
+    width: 100%;
+    text-align: center;
+  }
+  
+  #carrito-total {
+    font-size: 1.3rem;
+  }
+}
+
+/* Contenedor de botones */
+.acciones-carrito {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Estilo base para ambos botones */
+.btn-carrito {
+  padding: 0.8rem 2.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Botón Vaciar */
+.btn-vaciar {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.btn-vaciar:hover {
+  background-color: #e05555;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+/* Botón Pagar */
+.btn-pagar {
+  background-color: #2b7a78;
+  color: white;
+}
+
+.btn-pagar:hover {
+  background-color: #205c5b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(43, 122, 120, 0.3);
+}
+
+/* Iconos (opcional) */
+.btn-carrito::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.btn-vaciar::before {
+  background-image: url('../../resources/icons/trash-icon.svg');
+}
+
+.btn-pagar::before {
+  background-image: url('../../resources/icons/cart-icon.svg');
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .acciones-carrito {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .btn-carrito {
+    width: 100%;
+    padding: 0.8rem 1rem;
+  }
 }
