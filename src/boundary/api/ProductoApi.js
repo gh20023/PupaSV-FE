@@ -18,10 +18,12 @@ export async function mostrarProductosPorTipo() {
                 <h2>${tipo.charAt(0).toUpperCase() + tipo.slice(1)}</h2>
                 <ul>
                     ${productos.map(producto => `
-                        <li>
-                            <strong>${producto.nombre}</strong> - $${producto.precio}
-                            <br>
-                            <span>${producto.observaciones}</span>
+                        <li style="margin-bottom:1em;">
+                            <div style="display:flex; align-items:center; justify-content:space-between;">
+                                <strong>${producto.nombre}</strong>
+                                <span style="font-weight:bold;">$${producto.precio}</span>
+                            </div>
+                            <div style="font-size:0.95em; color:#555;">${producto.observaciones}</div>
                         </li>
                     `).join('')}
                 </ul>

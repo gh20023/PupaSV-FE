@@ -25,8 +25,10 @@ export async function mostrarCombos() {
                 const comboElement = document.createElement('div');
                 comboElement.className = 'combo';
                 comboElement.innerHTML = `
-                    <h3>${combo.nombre}</h3>
-                    <p class="combo-total">Total: $${total.toFixed(2)}</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <h3 style="margin:0;">${combo.nombre}</h3>
+                        <span class="combo-total" style="font-weight:bold;">Total: $${total.toFixed(2)}</span>
+                    </div>
                     <ul>
                         ${combo.productos.map(producto => `
                             <li>
