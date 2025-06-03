@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedidos - Pupas SV</title>
+  <link rel="stylesheet" href="estilos.css" /> <!-- Asegúrate que apunte a tu CSS principal -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    .pedidos {
+      padding: 4rem 1rem;
+      text-align: center;
+      background-color: #fffefc;
+    }
+
+    .pedidos h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      color: #2b7a78;
+      margin-bottom: 2rem;
+    }
+
+    .producto-lista {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .producto {
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      max-width: 280px;
+      text-align: left;
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .producto h3 {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .producto p {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .producto button {
+      background-color: #2b7a78;
+      color: white;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .producto button:hover {
+      background-color: #205f5d;
+    }
+  </style>
+</head>
+<body>
+  <section class="pedidos">
+    <h2>Haz tu Pedido</h2>
+    <div class="producto-lista">
+      <div class="producto">
+        <img src="resources/images/2505202500.png" alt="Pupusa Revueltas">
+        <h3>Pupusa Revueltas</h3>
+        <p>Frijoles, queso y chicharrón. ¡Una delicia salvadoreña!</p>
+        <button>Agregar al pedido</button>
+      </div>
+      <div class="producto">
+        <img src="resources/images/2505202501.png" alt="Yuca con chicharrón">
+        <h3>Yuca con Chicharrón</h3>
+        <p>Yuca cocida con chicharrón frito y curtido.</p>
+        <button>Agregar al pedido</button>
+      </div>
+      <!--  agregando  --> 
+    </div>
+  </section>
+</body>
+</html>

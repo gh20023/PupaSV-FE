@@ -18,8 +18,13 @@
         <li><a href="#">Inicio</a></li>
         <li><a href="./sucursales.html">Sucursales</a></li>
         <li><a href="./menu.html">Menú</a></li>
+
         <li><a href="#">Contacto</a></li>
         <li><a href="#" class="btn">Ver Carrito</a></li>
+
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="pedidos.html" class="btn">Pedidos Online</a></li>
+
       </ul>
     </nav>
   </div>
@@ -53,6 +58,41 @@
           <p>📍 Carretera ByPass, entre Calle Valparaiso y Calle Capitán Guzmán. Lote No. 7, Lotificación Solórzano, Santa Ana, El Salvador.</p>
           <p>🕒 Abierto todos los días, 8 AM – 10 PM</p>
         </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+      <p>¿Tienes dudas, sugerencias o deseas reservar?</p>
+    
+      <p><strong>Teléfono:</strong> +503 1234 5678</p>
+      <p><strong>Email:</strong> info@pupassv.com</p>
+      <p><strong>Dirección:</strong> Calle Los Mangos #123, San Salvador, El Salvador</p>
+    
+      <form action="enviar.php" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section> 
+
+    <section class="pedidos">
+      <h2>Haz tu Pedido</h2>
+      <div class="producto-lista">
+        <div class="producto">
+          <img src="resources/images/2505202500.png" alt="Pupusa Revueltas">
+          <h3>Pupusa Revueltas</h3>
+          <p>Frijoles, queso y chicharrón. ¡Una delicia salvadoreña!</p>
+          <button>Agregar al pedido</button>
+        </div>
+        <div class="producto">
+          <img src="resources/images/2505202501.png" alt="Yuca con chicharrón">
+          <h3>Yuca con Chicharrón</h3>
+          <p>Yuca cocida con chicharrón frito y curtido.</p>
+          <button>Agregar al pedido</button>
+        </div>
+        <!-- Puedes seguir agregando más productos aquí -->
       </div>
     </section>
 
