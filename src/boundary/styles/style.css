@@ -226,77 +226,6 @@ section.productos {
   font-size: 1.4rem;
 } 
 
-/* PEDIDOS */
-
-.pedidos {
-  padding: 4rem 1rem;
-  text-align: center;
-  background-color: #fffefc;
-}
-
-.pedidos h2 {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.5rem;
-  color: #2b7a78;
-  margin-bottom: 2rem;
-}
-
-.producto-lista {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.producto {
-  background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  max-width: 280px;
-  text-align: left;
-  transition: transform 0.3s ease;
-}
-
-.producto:hover {
-  transform: translateY(-5px);
-}
-
-.producto img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-}
-
-.producto h3 {
-  font-size: 1.3rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.producto p {
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.producto button {
-  background-color: #2b7a78;
-  color: white;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.producto button:hover {
-  background-color: #205f5d;
-  transform: scale(1.05);
-}
-
-
 .galeria {
   padding: 4rem 1rem;
   text-align: center;
@@ -329,6 +258,15 @@ section.productos {
 .galeria-grid img:hover {
   transform: scale(1.05);
 }
+
+.galeria-item figcaption {
+  margin-top: 0.75rem;
+  font-weight: bold;
+  color: #444;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
 
 #contacto {
   padding: 2.5rem 1rem; /* antes 4rem → más compacto */
