@@ -64,22 +64,17 @@ nav a:hover {
   color: #2b7a78;
 }
 
-.btn {
-  background-color: #2b7a78;     /* Verde elegante */
+.btn {  background-color: #2b7a78;
   color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
   text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  display: inline-block;
+  transition: background-color 0.3s;
 }
 
 .btn:hover {
-  background-color: #205f5d;     /* Un poco más oscuro al pasar el mouse */
-  transform: translateY(-2px);   /* Efecto de elevación */
+  background-color: #205c5b;
 }
-
 
 .hero {
   position: relative;
@@ -128,6 +123,7 @@ nav a:hover {
   color: #fffdc1;
   font-weight: 300;
 }
+
 
 .main-container {
   max-width: 900px;
@@ -228,13 +224,54 @@ section.productos {
   color: #444;
   margin-bottom: 1rem;
   font-size: 1.4rem;
+} 
+
+.galeria {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: #fffaf3; /* color crema claro */
 }
+
+.galeria h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #d94f04; /* rojo-anaranjado que da hambre */
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.galeria-grid img {
+  width: 100%;
+  height: 200px; /* Alto fijo */
+  object-fit: cover; /* Recorta lo que sobre, mantiene buena proporción */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.05);
+}
+
+.galeria-item figcaption {
+  margin-top: 0.75rem;
+  font-weight: bold;
+  color: #444;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
 
 #contacto {
   padding: 2.5rem 1rem; /* antes 4rem → más compacto */
   text-align: center;
-  background-color: #fefae0;
-
+  background-color: #fff3c4;
 }
 
 #contacto h2 {
@@ -275,174 +312,3 @@ section.productos {
   padding: 0.6rem;
   font-size: 0.95rem;
 }
-
-.pedidos {
-  padding: 4rem 1rem;
-  text-align: center;
-  background-color: #fffefc;
-}
-
-.pedidos h2 {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.5rem;
-  color: #2b7a78;
-  margin-bottom: 2rem;
-}
-
-.producto-lista {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.producto {
-  background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  max-width: 280px;
-  text-align: left;
-  transition: transform 0.3s ease;
-}
-
-.producto:hover {
-  transform: translateY(-5px);
-}
-
-.producto img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-}
-
-.producto h3 {
-  font-size: 1.3rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.producto p {
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.producto button {
-  background-color: #2b7a78;
-  color: white;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.producto button:hover {
-  background-color: #205f5d;
-  transform: scale(1.05);
-}
-
-/* PEDIDOS */
-
-.pedidos {
-  padding: 4rem 1rem;
-  text-align: center;
-  background-color: #fffefc;
-}
-
-.pedidos h2 {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.5rem;
-  color: #2b7a78;
-  margin-bottom: 2rem;
-}
-
-.producto-lista {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.producto {
-  background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  max-width: 280px;
-  text-align: left;
-  transition: transform 0.3s ease;
-}
-
-.producto:hover {
-  transform: translateY(-5px);
-}
-
-.producto img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-}
-
-.producto h3 {
-  font-size: 1.3rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.producto p {
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.producto button {
-  background-color: #2b7a78;
-  color: white;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.producto button:hover {
-  background-color: #205f5d;
-  transform: scale(1.05);
-}
-
-.galeria {
-  padding: 4rem 1rem;
-  background-color: #ffe5b4; /* naranja suave */
-  }
-
-.galeria h2 {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #2b7a78;
-}
-
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 0 1rem;
-}
-
-.galeria-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.galeria-grid img:hover {
-  transform: scale(1.05);
-}
-
-
