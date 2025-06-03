@@ -312,3 +312,18 @@ section.productos {
   padding: 0.6rem;
   font-size: 0.95rem;
 }
+
+
+
+.offline-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #ff6b6b;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}

@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pupas SV</title>
+  <link rel="manifest" href="../../manifest.json">
   <link rel="stylesheet" href="../styles/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@300;600&display=swap"
     rel="stylesheet">
@@ -12,6 +13,8 @@
 
 <body>
   <header>
+
+    <button id="install-btn" class="hidden">Instalar App</button>
     <div class="container">
       <div class="logo">
         <img src="../../resources/images/pupas-logo.png" alt="Logo Pupas SV">
@@ -51,8 +54,12 @@
       <div id="modal-body"></div>
     </div>
   </div>
+
+  
 </body>
 <script type="module" src="../api/ComboApi.js"></script>
 <script type="module" src="../viewBuilders/ProductoViewBuilder.js"></script>
+<script type="module" src="../../app.js"></script>
+
 
 </html>
