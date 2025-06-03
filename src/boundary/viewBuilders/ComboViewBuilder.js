@@ -1,6 +1,9 @@
 import { obtenerCombos } from '../api/ComboApi.js';
 import { abrirModalDetalle } from '../../control/utils/Modal.js';
 import { calcularTotalCombo } from '../../control/utils/CalcularPrecio.js';
+import { carrito } from '../../control/utils/CarritoStore.js';
+import { CarritoItem } from '../../entity/CarritoItem.js';
+import { enviarCarrito } from '../api/CarritoApi.js';
 
 async function mostrarCombos() {
     const contenedor = document.getElementById('combos');
@@ -32,8 +35,34 @@ async function mostrarCombos() {
                 comboElement.onclick = () => abrirModalDetalle({
                     tipo: 'combo',
                     data: combo,
-                    onAgregar: (detalle) => {
-                        alert(`Agregado ${detalle.cantidad} ${detalle.nombre} al carrito`);
+                    onAgregar: async (detalle) => {
+                        // detalle.cantidad es la cantidad de combos seleccionada
+                        detalle.productos.forEach(producto => {
+                            // Multiplica la cantidad del producto por la cantidad de combos seleccionada
+                            const cantidadTotal = producto.cantidad * detalle.cantidad;
+                            // Busca si ya existe ese producto en el carrito
+                            let existente = carrito.items.find(
+                                item => item.idProductoPrecio === producto.idProductoPrecio
+                            );
+                            if (existente) {
+                                existente.cantidad += cantidadTotal;
+                            } else {
+                                carrito.items.push(new CarritoItem(
+                                    producto.idProductoPrecio,
+                                    producto.nombre,
+                                    cantidadTotal,
+                                    producto.precio,
+                                    producto.observaciones || ''
+                                ));
+                            }
+                        });
+
+                        try {
+                            await enviarCarrito(carrito);
+                            alert(`Agregado ${detalle.cantidad} combo(s) "${detalle.nombre}" al carrito`);
+                        } catch (e) {
+                            alert('Error al agregar combo al carrito: ' + e.message);
+                        }
                     }
                 });
                 contenedor.appendChild(comboElement);

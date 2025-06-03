@@ -39,3 +39,15 @@ export async function enviarCarrito(carrito) {
     // Si no hay contenido, simplemente retorna true o undefined
     return true;
 }
+
+// Eliminar (DELETE) el carrito del backend
+export async function eliminarItemCarrito(idProductoPrecio) {
+    const response = await fetch(`${API_BASE_URL}/carrito/${idProductoPrecio}`, {
+        method: 'DELETE',
+        credentials: 'include'
+    });
+    if (!response.ok) {
+        throw new Error('Error al eliminar el producto del carrito');
+    }
+    return true;
+}
