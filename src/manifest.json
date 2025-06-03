@@ -3,7 +3,7 @@
   "lang": "es-ES",
   "name": "PupaSV",
   "display": "standalone",
-  "start_url": "index.html",
+  "start_url": "boundary/views/index.html",
   "short_name": "Pupa",
   "theme_color": "#FFFFFF",
   "description": "Pupav1.",
