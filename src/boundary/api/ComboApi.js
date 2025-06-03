@@ -1,4 +1,6 @@
 import { apiGet } from './AbstractApi.js';
+import { abrirModalDetalle } from '../../control/utils/Modal.js';
+import { calcularTotalCombo } from '../../control/utils/CalcularPrecio.js';
 
 async function obtenerCombos(){
     const data = await apiGet('/combo/por-combo');
@@ -18,15 +20,12 @@ export async function mostrarCombos() {
             contenedor.innerHTML = '<p>No hay combos disponibles.</p>';
         } else {
             combos.forEach(combo => {
-                // Calcular el precio total del combo
-                const total = combo.productos.reduce(
-                    (sum, producto) => sum + (producto.precio * producto.cantidad), 0
-                );
+                const total = calcularTotalCombo(combo);
                 const comboElement = document.createElement('div');
                 comboElement.className = 'combo';
                 comboElement.innerHTML = `
                     <div style="display: flex; align-items: center; justify-content: space-between;">
-                        <h3 style="margin:0;">${combo.nombre}</h3>
+                        <h3 style="margin:0; cursor:pointer;">${combo.nombre}</h3>
                         <span class="combo-total" style="font-weight:bold;">Total: $${total.toFixed(2)}</span>
                     </div>
                     <ul>
@@ -37,6 +36,14 @@ export async function mostrarCombos() {
                         `).join('')}
                     </ul>
                 `;
+                // clic para abrir el modal
+                comboElement.onclick = () => abrirModalDetalle({
+                    tipo: 'combo',
+                    data: combo,
+                    onAgregar: (detalle) => {
+                        alert(`Agregado ${detalle.cantidad} ${detalle.nombre} al carrito`);
+                    }
+                });
                 contenedor.appendChild(comboElement);
             });
         }

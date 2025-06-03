@@ -22,7 +22,7 @@
           <li><a href="#">Sucursales</a></li>
           <li><a href="#">Menú</a></li>
           <li><a href="#">Contacto</a></li>
-          <li><a href="#" class="btn">Pedidos Online</a></li>
+          <li><a href="#" class="btn">Ver carrito</a></li>
         </ul>
       </nav>
     </div>
@@ -41,6 +41,16 @@
     </div>
 
   </main>
+  <!-- Modal reutilizable para combos y productos -->
+  <div id="modal-overlay"
+    style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3); z-index:1000; justify-content:center; align-items:center;">
+    <div id="modal-content"
+      style="background:#fff; border-radius:10px; padding:2rem; min-width:300px; max-width:90vw; box-shadow:0 4px 16px rgba(0,0,0,0.2); position:relative;">
+      <button id="modal-close"
+        style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
 </body>
 <script type="module" src="../api/ComboApi.js"></script>
 <script type="module" src="../api/ProductoApi.js"></script>
