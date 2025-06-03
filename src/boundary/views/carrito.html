@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pupas SV</title>
+    <title>Carrito - Pupas SV</title>
     <link rel="manifest" href="../../manifest.json">
     <link rel="stylesheet" href="../styles/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@300;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="connection-status" id="connection-status"></div>
-
-    <button id="install-btn" class="hidden">Instalar App</button>
+        <button id="install-btn" class="hidden">Instalar App</button>
         <div class="container">
             <div class="logo">
                 <img src="../../resources/images/pupas-logo.png" alt="Logo Pupas SV">
@@ -35,14 +32,21 @@
     <main>
         <section id="carrito-section">
             <h1>Tu Carrito</h1>
-            <div id="carrito-items"></div>
+            <div id="carrito-items">
+                <!-- Contenido dinámico se insertará aquí -->
+                <p class="carrito-mensaje">Cargando tu carrito...</p>
+            </div>
             <div id="carrito-total"></div>
+            
+            <!-- Botones de acción (opcional) -->
+            <div class="acciones-carrito">
+                <button class="btn-accion btn-vaciar" id="vaciar-carrito">Vaciar Carrito</button>
+                <button class="btn-accion btn-continuar" id="pagar-carrito">Continuar a Pagar</button>
+            </div>
         </section>
     </main>
 
-
+    <script type="module" src="../viewBuilders/CarritoViewBuilder.js"></script>
+    <script type="module" src="../../app.js"></script>
 </body>
-<script type="module" src="../viewBuilders/CarritoViewBuilder.js"></script>
-<script type="module" src="../../app.js"></script>
-
 </html>

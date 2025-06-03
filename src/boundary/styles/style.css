@@ -327,3 +327,469 @@ section.productos {
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+
+/* footer */
+.footer {
+  background-color: #2b7a78; /* Color verde azulado de tu paleta */
+  color: white;
+  padding: 3rem 1rem 1rem; /* 3rem arriba, 1rem abajo */
+  margin-top: 4rem; /* Separa del contenido superior */
+}
+
+/* Contenedor flexible para las columnas */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive: 3 columnas que se apilan en móviles */
+  gap: 2rem; /* Espacio entre columnas */
+  max-width: 1200px; /* Ancho máximo como el resto del sitio */
+  margin: 0 auto; /* Centrado */
+  padding-bottom: 2rem;
+}
+
+/* Estilo para cada sección del footer */
+.footer-logo img {
+  max-width: 180px; /* Tamaño controlado del logo */
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1); /* Convierte logo a blanco (si no tienes versión white) */
+}
+
+.footer-logo p {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Sección de enlaces rápidos */
+.footer-links h3,
+.footer-social h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-links h3::after,
+.footer-social h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 50px;
+  height: 2px;
+  background-color: #f4c542; /* Línea decorativa mostaza */
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: #f4c542; /* Color mostaza al hover */
+  transform: translateX(5px); /* Efecto movimiento */
+}
+
+/* Sección de redes sociales */
+.social-icons {
+  display: flex;
+  gap: 1rem; /* Espacio entre íconos */
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px) scale(1.1); /* Efecto levitar */
+  color: #f4c542;
+}
+
+/* Copyright */
+.footer-copyright {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil */
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Responsive: Apilar columnas en móviles */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-links h3::after,
+  .footer-social h3::after {
+    left: 50%;
+    transform: translateX(-50%); /* Centrar línea decorativa */
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* Contenedor del logo */
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Imagen del logo */
+.footer-logo-img {
+  width: 180px; /* Ajusta según necesidad */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.05); /* Efecto sutil al hacer hover */
+}
+
+/* Texto del slogan */
+.footer-slogan {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Contenedor principal */
+#productos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Sección por tipo de producto */
+.tipo-producto {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.tipo-producto:hover {
+  transform: translateY(-5px);
+}
+
+.tipo-producto h2 {
+  background-color: #2b7a78; /* Verde azulado */
+  color: white;
+  padding: 1rem 1.5rem;
+  margin: 0;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+}
+
+/* Lista de productos */
+.tipo-producto ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Items individuales */
+.tipo-producto li {
+  padding: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.tipo-producto li:last-child {
+  border-bottom: none;
+}
+
+.tipo-producto li:hover {
+  background-color: #fff9e6; /* Amarillo muy claro */
+}
+
+/* Encabezado del producto (nombre + precio) */
+.tipo-producto li > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.tipo-producto strong {
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.tipo-producto span {
+  color: #d94f04; /* Naranja */
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Descripción/observaciones */
+.tipo-producto div:last-child {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .tipo-producto h2 {
+    font-size: 1.5rem;
+    padding: 0.8rem 1rem;
+  }
+  
+  .tipo-producto li {
+    padding: 1rem;
+  }
+  
+  .tipo-producto strong {
+    font-size: 1rem;
+  }
+}
+
+/* Estilos para la sección de combos */
+#combos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Estilos para cada combo */
+.combo {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.combo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  border-color: #f4c542; /* Borde amarillo al hacer hover */
+}
+
+/* Encabezado del combo (nombre + precio total) */
+.combo > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.combo h3 {
+  color: #2b7a78; /* Verde azulado */
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.combo-total {
+  color: #d94f04; /* Naranja */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Lista de productos en el combo */
+.combo ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.combo li {
+  padding: 0.5rem 0;
+  color: #555;
+  font-size: 0.95rem;
+  border-bottom: 1px dashed #eee;
+}
+
+.combo li:last-child {
+  border-bottom: none;
+}
+
+/* Mensajes de estado */
+#combos > p {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+  .combo {
+    padding: 1rem;
+  }
+  
+  .combo h3 {
+    font-size: 1.2rem;
+  }
+  
+  .combo-total {
+    font-size: 1rem;
+  }
+  
+  .combo li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Estilos para la sección del carrito */
+#carrito-section {
+  max-width: 1200px;
+  margin: 6rem auto 3rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#carrito-section h1 {
+  font-family: 'Pacifico', cursive;
+  color: #2b7a78;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+/* Tabla de items del carrito */
+#carrito-items table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+#carrito-items th {
+  background-color: #2b7a78;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+#carrito-items td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+#carrito-items tr:last-child td {
+  border-bottom: none;
+}
+
+#carrito-items tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Total del carrito */
+#carrito-total {
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d94f04;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f4c542;
+}
+
+/* Mensajes de estado */
+.carrito-mensaje {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.carrito-error {
+  color: #d94f04;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+/* Botones de acción (puedes agregarlos después) */
+.acciones-carrito {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-accion {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-continuar {
+  background-color: #2b7a78;
+  color: white;
+}
+
+.btn-continuar:hover {
+  background-color: #205c5b;
+}
+
+.btn-vaciar {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.btn-vaciar:hover {
+  background-color: #e05555;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  #carrito-section {
+    margin: 5rem auto 2rem;
+    padding: 1rem;
+  }
+  
+  #carrito-items table {
+    font-size: 0.9rem;
+  }
+  
+  #carrito-items th,
+  #carrito-items td {
+    padding: 8px;
+  }
+  
+  .acciones-carrito {
+    flex-direction: column;
+  }
+  
+  .btn-accion {
+    width: 100%;
+  }
+}
+
