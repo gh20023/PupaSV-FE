@@ -1,56 +1,50 @@
 const APP_VERSION = '1.0.0';
-//document.getElementById('app-version').textContent += APP_VERSION;
-
-
 let estadoConexion = navigator.onLine;
+console.log(estadoConexion);
 
-//Elementos DOM
-
+// Elementos DOM
 const installBtn = document.getElementById('install-btn');
 const notificationBtn = document.getElementById('notification-btn');
 const coneccionEstado = document.getElementById('connection-status');
 
-function actualizarEstadoConexion(){
+// Función mejorada para actualizar estado
+function actualizarEstadoConexion() {
   estadoConexion = navigator.onLine;
 
-
-  if(estadoConexion){
-    coneccionEstado.textContent = 'En linea';
+  if(estadoConexion) {
+    coneccionEstado.textContent = 'En línea';
+    coneccionEstado.className = 'connection-status online';  // Corregido a 'online'
+    ocultarOfflineMensaje();
+    // Opcional: Sincronizar datos pendientes aquí
+  } else {
+    coneccionEstado.textContent = 'Sin conexión';
     coneccionEstado.className = 'connection-status offline';
-    ocultarOfflineMensaje(); 
-  }else{
-    coneccionEstado.textContent = 'Sin conexion';
-    coneccionEstado.className = 'connection-status offline'
     mostrarOfflineMensaje();
   }
-
+  
+  // Persistir estado inmediatamente
+  sessionStorage.setItem('networkStatus', estadoConexion ? 'online' : 'offline');
 }
 
-
-//Mostrar Mensaje offline
-function mostrarOfflineMensaje(){
-  
-  if(!document.getElementById('offline-banner')){
+// Mostrar Mensaje offline (mejorado)
+function mostrarOfflineMensaje() {
+  if(!document.getElementById('offline-banner')) {
     const banner = document.createElement('div');
     banner.id = 'offline-banner';
     banner.innerHTML = `
       <div class="offline-alert">
-        <p>Estás trabajando en modo offline. Algunas funciones pueden estar limitadas.</p>
+        <p>Si conexion</p>
       </div>
     `;
     document.body.prepend(banner);
   }
-
 }
 
-//ocultar mensaje
-function ocultarOfflineMensaje(){
+// Ocultar mensaje offline
+function ocultarOfflineMensaje() {
   const banner = document.getElementById('offline-banner');
-  if(banner){
-    banner.remove();
-  }
+  if(banner) banner.remove();
 }
-
 
 // Variable para el deferred prompt
 let deferredPrompt;
@@ -90,9 +84,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
     
     deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
-        console.log('Usuario aceptó instalar la PWA');
+        console.log(' instalar la PWA');
       } else {
-        console.log('Usuario rechazó instalar la PWA');
+        console.log('no instalar la PWA');
       }
       deferredPrompt = null;
     });
@@ -108,8 +102,7 @@ window.addEventListener('appinstalled', () => {
 
 
 window.addEventListener('online', () =>{
-  actualizarConeccionEstado();
-
+  actualizarEstadoConexion();
 
 });
 
@@ -119,7 +112,7 @@ actualizarEstadoConexion();
 
 //persistir estado
 window.addEventListener('beforeunload', () =>{
-  sessionStorage.setItem('networtStatus', estadoConexion ? 'online': 'offline');
+  sessionStorage.setItem('networkStatus', estadoConexion ? 'online': 'offline');
 });
 
 
