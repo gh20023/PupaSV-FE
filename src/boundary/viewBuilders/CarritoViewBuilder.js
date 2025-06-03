@@ -34,8 +34,9 @@ async function mostrarCarrito() {
           `).join('')}
         </tbody>
       </table>
+      <div id="carrito-total"></div>
     `;
-    totalDiv.innerHTML = `<h2>Total: $${Number(carrito.total).toFixed(2)}</h2>`;
+    document.getElementById('carrito-total').innerHTML = `Total: $${Number(carrito.total).toFixed(2)}`;
   } catch (e) {
     itemsDiv.innerHTML = `<p style="color:red;">Error al cargar el carrito: ${e.message}</p>`;
     totalDiv.innerHTML = '';
