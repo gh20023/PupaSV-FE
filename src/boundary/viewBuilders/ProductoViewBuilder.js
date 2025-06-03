@@ -29,14 +29,14 @@ async function mostrarProductosPorTipo() {
             `;
             contenedor.appendChild(tipoSection);
 
-            // Añadir evento click a cada producto
+            // Añade evento click a cada producto
             productos.forEach((producto, idx) => {
                 const li = tipoSection.querySelector(`#producto-${tipo}-${idx}`);
                 if (li) li.onclick = () => abrirModalDetalle({
                     tipo: 'producto',
                     data: producto,
                     onAgregar: async (detalle) => {
-                        // Crea el item y agrégalo al carrito
+                        // Crea el item y lo agrega al carrito
                         const item = new CarritoItem(
                             producto.idProductoPrecio,
                             producto.nombre,

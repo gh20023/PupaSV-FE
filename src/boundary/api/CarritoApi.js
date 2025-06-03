@@ -3,7 +3,10 @@ import { CarritoMapper } from '../../control/mappers/CarritoMapper.js';
 
 // Obtener (GET) el carrito del backend
 export async function obtenerCarrito() {
-    const response = await fetch(`${API_BASE_URL}/carrito`);
+    const response = await fetch(`${API_BASE_URL}/carrito`, {
+        method: 'GET',
+        credentials: 'include' // Cookies para session
+    });
     if (!response.ok) {
         throw new Error('Error al obtener el carrito');
     }
@@ -23,7 +26,7 @@ export async function enviarCarrito(carrito) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(itemsArray),
-        credentials: 'include' // Asegura que las cookies de sesión se envíen
+        credentials: 'include' // Cookies para session
     });
     if (!response.ok) {
         throw new Error('Error al enviar el carrito');
