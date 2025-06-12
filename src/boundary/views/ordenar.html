@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ordenar - Pupas SV</title>
+    <link rel="manifest" href="../../manifest.json">
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/ordenarstyle.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@300;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="connection-status" id="connection-status"></div>
+        <button id="install-btn" class="hidden">Instalar App</button>
+        <div class="container">
+            <div class="logo">
+                <img src="../../resources/images/pupas-logo.png" alt="Logo Pupas SV">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./sucursales.html">Sucursales</a></li>
+                    <li><a href="./menu.html">Menú</a></li>
+                    <li><a href="./index.html#contacto">Contacto</a></li>
+                    <li><a href="./carrito.html" class="btn">Ver carrito</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="ordenar-container">
+            <!-- Resumen del carrito -->
+            <section class="resumen-carrito">
+                <h2>Resumen de tu Orden</h2>
+                <div id="resumen-carrito-items"></div>
+                <div id="resumen-carrito-total" style="margin-top:1rem; font-weight:bold;"></div>
+            </section>
+
+            <!-- Formulario de orden -->
+            <section class="form-orden">
+                <h2>Realiza el pago</h2>
+                <label for="sucursal">Sucursal</label>
+                <select id="sucursal" required>
+                    <option value="">Selecciona una sucursal</option>
+                    <option value="Sucursal Central">Las Ramblas</option>
+                    <option value="Sucursal Norte">Zarzamora</option>
+                    <option value="Sucursal Sur">Centro</option>
+                </select>
+
+                <label>Método de pago</label>
+                <select id="metodo-pago" required>
+                    <option value="">Selecciona un método de pago</option>
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Tarjeta">Tarjeta (crédito/débito)</option>
+                    <option value="Transferencia">Transferencia Bancaria</option>
+                </select>
+                <div id="pago-extra"></div>
+
+                <button id="btn-confirmar-orden">Confirmar pago</button>
+            </section>
+        </div>
+    </main>
+    <script type="module" src="../viewBuilders/ResumenCarritoViewBuilder.js"></script>
+    <script type="module" src="../viewBuilders/PagoViewBuilder.js"></script>
+</body>
+
+</html>

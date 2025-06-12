@@ -1,4 +1,5 @@
 import carritoApi from '../../control/api/CarritoApi.js';
+import '../../control/utils/ConfirmarOrdenModal.js';
 
 function mostrarCarrito() {
     const itemsDiv = document.getElementById('carrito-items');
@@ -63,3 +64,17 @@ function mostrarCarrito() {
 }
 
 mostrarCarrito();
+
+const modal = document.querySelector('confirmar-orden-modal');
+
+document.getElementById('pagar-carrito').onclick = function () {
+    modal.open();
+};
+
+modal.addEventListener('confirmar', () => {
+    window.location.href = 'ordenar.html';
+});
+
+modal.addEventListener('cancelar', () => {
+    window.location.href = 'menu.html';
+});

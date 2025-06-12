@@ -1,0 +1,95 @@
+        .ordenar-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem auto;
+            max-width: 1100px;
+        }
+
+        .resumen-carrito {
+            flex: 1 1 350px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            min-width: 320px;
+        }
+
+        .resumen-carrito table tbody tr:not(:last-child) td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .resumen-carrito #resumen-carrito-total {
+            border-top: 2px solid #f0f0f0;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            font-weight: bold;
+            font-size: 1.15rem;
+        }
+
+        .resumen-carrito table thead tr th {
+            border-bottom: 2px solid #2b7a78;
+            text-align: center;
+            padding-bottom: 0.5em;
+        }
+
+        .resumen-carrito table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .form-orden {
+            flex: 1 1 320px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            min-width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-orden label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .form-orden select,
+        .form-orden input[type="text"] {
+            width: 100%;
+            padding: 0.7em;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .form-orden .metodo-pago {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-orden button {
+            margin-top: 1.5rem;
+            padding: 0.8em 1.5em;
+            border-radius: 6px;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            background: #2b7a78;
+            color: #fff;
+            transition: background 0.2s;
+        }
+
+        .form-orden button:hover {
+            background: #205e5a;
+        }
+
+        @media (max-width: 900px) {
+            .ordenar-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
