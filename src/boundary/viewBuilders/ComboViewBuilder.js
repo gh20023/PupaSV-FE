@@ -4,6 +4,7 @@ import { calcularTotalCombo } from '../../control/utils/CalcularPrecio.js';
 import { carrito } from '../../control/utils/CarritoStore.js';
 import { CarritoItem } from '../../entity/CarritoItem.js';
 import CarritoApi from '../../control/api/CarritoApi.js';
+import '../components/ComboItem.js'; //Custom element
 
 const comboApi = new ComboApi();
 
@@ -18,23 +19,12 @@ function mostrarCombos() {
                 contenedor.innerHTML = '<p>No hay combos disponibles.</p>';
             } else {
                 combos.forEach(combo => {
-                    const total = calcularTotalCombo(combo);
-                    const comboElement = document.createElement('div');
-                    comboElement.className = 'combo';
-                    comboElement.innerHTML = `
-                        <div style="display: flex; align-items: center; justify-content: space-between;">
-                            <h3 style="margin:0; cursor:pointer;">${combo.nombre}</h3>
-                            <span class="combo-total" style="font-weight:bold;">Total: $${total.toFixed(2)}</span>
-                        </div>
-                        <ul>
-                            ${combo.productos.map(producto => `
-                                <li>
-                                    ${producto.nombre} - Cantidad: ${producto.cantidad}
-                                </li>
-                            `).join('')}
-                        </ul>
-                    `;
-                    comboElement.onclick = () => abrirModalDetalle({
+                    // Calcula el total si no viene del backend
+                    combo.total = calcularTotalCombo(combo);
+
+                    const item = document.createElement('combo-item');
+                    item.data = combo;
+                    item.onclick = () => abrirModalDetalle({
                         tipo: 'combo',
                         data: combo,
                         onAgregar: (detalle) => {
@@ -65,7 +55,7 @@ function mostrarCombos() {
                                 });
                         }
                     });
-                    contenedor.appendChild(comboElement);
+                    contenedor.appendChild(item);
                 });
             }
         })
