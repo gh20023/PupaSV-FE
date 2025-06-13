@@ -5,7 +5,7 @@ export default class OrdenApi extends AbstractApi {
         super('orden');
     }
 
-    crearOrden(itemsCarrito, sucursal) {
-        return this.post('/desde-carrito', { itemsCarrito, sucursal });
+    crearOrden(sucursal) {
+        return this.post(`/desde-carrito?sucursal=${encodeURIComponent(sucursal)}`,{});
     }
 }
