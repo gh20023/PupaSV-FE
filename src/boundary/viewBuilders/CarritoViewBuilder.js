@@ -1,4 +1,5 @@
 import carritoApi from '../../control/api/CarritoApi.js';
+import { showToast } from '../../control/utils/Toast.js';
 import '../../control/utils/ConfirmarOrdenModal.js';
 
 function mostrarCarrito() {
@@ -52,7 +53,7 @@ function mostrarCarrito() {
                     if (confirm('¿Eliminar este producto del carrito?')) {
                         carritoApi.eliminarItemCarrito(id)
                             .then(() => mostrarCarrito())
-                            .catch(e => alert('Error al eliminar: ' + e.message));
+                            .catch(e => showToast('Error al eliminar: ' + e.message, 'error'));
                     }
                 };
             });

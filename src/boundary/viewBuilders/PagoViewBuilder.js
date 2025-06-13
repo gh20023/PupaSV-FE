@@ -3,6 +3,7 @@ import PagoApi from '../../control/api/PagoApi.js';
 import carritoApi from '../../control/api/CarritoApi.js';
 import { PagoMapper } from '../../control/mappers/PagoRequestMapper.js';
 import { setupMetodoPagoSwitcher } from './MetodoPagoSwitcher.js';
+import { showToast } from '../../control/utils/Toast.js';
 
 const ordenApi = new OrdenApi();
 const pagoApi = new PagoApi();
@@ -20,11 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const metodoPago = metodoPagoSelect.value;
 
         if (!sucursal) {
-            alert('Selecciona una sucursal.');
+            showToast('Selecciona una sucursal.', 'error');
             return;
         }
         if (!metodoPago) {
-            alert('Selecciona un método de pago.');
+            showToast('Selecciona un método de pago.', 'error');
             return;
         }
 
@@ -65,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             })
             .catch(e => {
-                alert('Error al procesar la orden/pago: ' + (e.message || e));
+                showToast('Error al procesar la orden/pago: ' + (e.message || e), 'error');
             })
             .finally(() => {
                 btnConfirmar.disabled = false;

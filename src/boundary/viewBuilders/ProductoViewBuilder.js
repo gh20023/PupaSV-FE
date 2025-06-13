@@ -1,8 +1,8 @@
 import ProductoApi from '../../control/api/ProductoApi.js';
 import { abrirModalDetalle } from '../../control/utils/Modal.js';
 import { carrito } from '../../control/utils/CarritoStore.js';
+import { agregarAlCarritoYEnviar } from '../../control/utils/AgregarCarritoUtils.js';
 import { CarritoItem } from '../../entity/CarritoItem.js';
-import CarritoApi from '../../control/api/CarritoApi.js';
 import '../components/ProductoItem.js'; // Importa el custom element
 
 const productoApi = new ProductoApi();
@@ -36,15 +36,11 @@ function mostrarProductosPorTipo() {
                                 producto.precio,
                                 producto.observaciones || ''
                             );
-                            carrito.items.push(carritoItem);
-
-                            CarritoApi.enviarCarrito(carrito)
-                                .then(() => {
-                                    alert('Producto agregado al carrito');
-                                })
-                                .catch(error => {
-                                    alert('Error al agregar al carrito: ' + error.message);
-                                });
+                            agregarAlCarritoYEnviar({
+                                carrito,
+                                productos: [carritoItem],
+                                mensajeExito: 'Producto agregado al carrito'
+                            });
                         }
                     });
                     ul.appendChild(item);
