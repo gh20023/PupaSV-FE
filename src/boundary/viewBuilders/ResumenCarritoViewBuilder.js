@@ -1,4 +1,5 @@
 import carritoApi from '../../control/api/CarritoApi.js';
+import '../../boundary/components/CarritoTable.js';
 
 function mostrarResumenCarrito() {
     const itemsDiv = document.getElementById('resumen-carrito-items');
@@ -7,36 +8,10 @@ function mostrarResumenCarrito() {
 
     carritoApi.obtenerCarrito()
         .then(carrito => {
-            if (!carrito.items.length) {
-                itemsDiv.innerHTML = '<p>El carrito está vacío.</p>';
-                totalDiv.innerHTML = '';
-                return;
-            }
-            itemsDiv.innerHTML = `
-                <table style="width:100%;border-collapse:collapse;">
-                    <thead>
-                        <tr>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Precio unitario</th>
-                            <th>Subtotal</th>
-                            <th>Observaciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${carrito.items.map(item => `
-                            <tr>
-                                <td>${item.nombreProducto}</td>
-                                <td>${item.cantidad}</td>
-                                <td>$${Number(item.precio).toFixed(2)}</td>
-                                <td>$${(item.precio * item.cantidad).toFixed(2)}</td>
-                                <td>${item.observaciones || ''}</td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                </table>
-            `;
-            totalDiv.innerHTML = `Total a pagar: $${Number(carrito.total || 0).toFixed(2)}`;
+            const table = document.createElement('carrito-table');
+            table.data = { items: carrito.items, total: carrito.total, editable: false };
+            itemsDiv.innerHTML = '';
+            itemsDiv.appendChild(table);
         })
         .catch(e => {
             itemsDiv.innerHTML = `<p style="color:red;">Error al cargar el resumen: ${e.message}</p>`;
