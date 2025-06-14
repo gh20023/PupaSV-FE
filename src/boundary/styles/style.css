@@ -688,4 +688,9 @@ section.productos {
     to { opacity: 0.95; transform: translateY(0);}
 }
 
+.btn-inactivo {
+    opacity: 0.6;
+    pointer-events: auto;
+    cursor: not-allowed;
+}
 
