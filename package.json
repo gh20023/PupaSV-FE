@@ -1,12 +1,14 @@
 {
   "name": "pupas-fe",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "start": "browser-sync start --server 'src' --files 'src/**/*.html', 'src/**/*.css', 'src/**/*.js'"
+    "start": "browser-sync start --server 'src' --files 'src/**/*.html', 'src/**/*.css', 'src/**/*.js'",
+    "test": "mocha --recursive test"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,10 @@
   "homepage": "https://github.com/gh20023/PupaSV-FE#readme",
   "description": "",
   "devDependencies": {
-    "browser-sync": "^3.0.4"
+    "browser-sync": "^3.0.4",
+    "chai": "^5.2.0",
+    "jsdom": "^26.1.0",
+    "mocha": "^11.6.0",
+    "sinon": "^21.0.0"
   }
 }
