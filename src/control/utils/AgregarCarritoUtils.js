@@ -1,6 +1,6 @@
 import { CarritoItem } from '../../entity/CarritoItem.js';
 import CarritoApi from '../api/CarritoApi.js';
-import { showToast } from './Toast.js';
+import { Toast} from './Toast.js';
 
 export function agregarAlCarritoYEnviar({ carrito, productos, mensajeExito }) {
     productos.forEach(producto => {
@@ -25,6 +25,6 @@ export function agregarAlCarritoYEnviar({ carrito, productos, mensajeExito }) {
     });
 
     return CarritoApi.enviarCarrito(carrito)
-        .then(() => showToast(mensajeExito, 'success'))
-        .catch(error => showToast('Error al agregar al carrito: ' + error.message, 'error'));
+        .then(() => Toast.showToast(mensajeExito, 'success'))
+        .catch(error => Toast.showToast('Error al agregar al carrito: ' + error.message, 'error'));
 }

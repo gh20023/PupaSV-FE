@@ -1,5 +1,5 @@
 import carritoApi from '../../control/api/CarritoApi.js';
-import { showToast } from '../../control/utils/Toast.js';
+import { Toast } from '../../control/utils/Toast.js';
 import '../../boundary/components/CarritoTable.js';
 import '../../boundary/components/ConfirmarAccionModal.js';
 
@@ -36,7 +36,7 @@ function mostrarCarrito() {
                     if (confirmado) {
                         carritoApi.eliminarItemCarrito(id)
                             .then(() => mostrarCarrito())
-                            .catch(e => showToast('Error al eliminar: ' + e.message, 'error'));
+                            .catch(e => Toast.showToast('Error al eliminar: ' + e.message, 'error'));
                     }
                 });
             });
@@ -54,7 +54,7 @@ const btnPagar = document.getElementById('pagar-carrito');
 
 btnPagar.onclick = function () {
     if (btnPagar.classList.contains('btn-inactivo')) {
-        showToast('No se puede ordenar con un carrito vacío', 'error');
+        Toast.showToast('No se puede ordenar con un carrito vacío', 'error');
         return;
     }
     modal.open({
