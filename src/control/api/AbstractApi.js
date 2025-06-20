@@ -3,7 +3,7 @@ export default class AbstractApi {
         this.BASE_URL = "http://localhost:9080/PupaSv-1.0-SNAPSHOT/v1/";
         this.basePath = basePath;
     }
-
+    //Metodo para GET
     get(path = '', options = {}) {
         return fetch(this.BASE_URL + this.basePath + path, {
             method: 'GET',
@@ -17,7 +17,7 @@ export default class AbstractApi {
             return response.json();
         });
     }
-
+    //Metodo para POST
     post(path = '', data = {}, options = {}) {
         return fetch(this.BASE_URL + this.basePath + path, {
             method: 'POST',
@@ -34,7 +34,7 @@ export default class AbstractApi {
             return response.text().then(text => text ? JSON.parse(text) : true);
         });
     }
-
+    //Metodo para DELETE
     delete(path = '', options = {}) {
         return fetch(this.BASE_URL + this.basePath + path, {
             method: 'DELETE',
