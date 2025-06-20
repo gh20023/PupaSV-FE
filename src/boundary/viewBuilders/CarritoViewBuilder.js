@@ -47,6 +47,9 @@ function mostrarCarrito() {
         });
 }
 
+
+// comentario 
+
 mostrarCarrito();
 
 const modal = document.querySelector('confirmar-accion-modal');
